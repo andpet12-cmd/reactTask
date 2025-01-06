@@ -1,7 +1,6 @@
 export interface ITodo {
-    id: number;
-    completed: boolean;
-    title: string;
     userId: number;
+    id: number;
+    todo: string;
+    completed: boolean;
 }
-
