@@ -1,12 +1,8 @@
-import {ITodo} from "./ITodo.ts";
+import {ITodo} from "./ITodo.ts"
 
-export interface rootType {
+export interface ITodosResponse {
     todos: ITodo[];
     total: number;
     skip: number;
     limit: number;
-}
-
-export interface ITodosResponse {
-
 }

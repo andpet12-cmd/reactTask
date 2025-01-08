@@ -1,7 +1,9 @@
-import {useEffect, useState} from "react";
 import {Todo} from "./Todo.tsx";
-import {getAllTodos} from "../services/api.service.ts";
 import {ITodo} from "../models/ITodo.ts";
+import {useEffect, useState} from "react";
+import {getAllTodos} from "../services/api.service.ts";
+
+
 
 export const Todos = () => {
 
@@ -10,7 +12,6 @@ export const Todos = () => {
     useEffect(() => {
 
         getAllTodos().then(({todos}) => setTodos(todos))
-
     }, []);
     return (
         <>
