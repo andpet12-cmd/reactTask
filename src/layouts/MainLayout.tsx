@@ -1,9 +1,7 @@
 import {Outlet} from "react-router";
 
-const MainLayout = () => {
-    return <>
-        Main layout
+export const MainLayout = () => {
+    return <div>
         <Outlet/>
-    </>;
-}
-export default MainLayout;
+    </div>
+};
