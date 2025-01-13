@@ -1,16 +1,10 @@
-import {Link, Outlet} from "react-router";
+import {Outlet} from "react-router";
+import {MenuComponent} from "../components/menu/MenuComponent.tsx";
 
 
 export const MainLayout = () => {
     return <div>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/users">UsersPage</Link>
-                </li>
-
-            </ul>
-        </nav>
+        <MenuComponent/>
         <Outlet/>
     </div>
 }
