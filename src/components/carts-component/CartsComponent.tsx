@@ -5,18 +5,16 @@ import {ICartResponseModel} from "../../models/ICartResponseModel.ts";
 import {cartService} from "../../services/api.service.ts";
 
 
-export const CartsComponent = () => {
-
+export const CartsComponent = ()=> {
     const {id} = useParams();
+    const [carts, setCarts] = useState<ICart[]>([]);
 
-    const [carts, setCarts] = useState<ICart[]>([])
 
     useEffect(() => {
         if (id) {
-            cartService.getCartsOfUsers(id)
+            cartService.getCartsOfUser(id)
                 .then(({carts}: ICartResponseModel) => {
                     setCarts(carts);
-                    console.log(carts);
                 });
         }
     }, [id]);
@@ -25,10 +23,10 @@ export const CartsComponent = () => {
         <div>
             {
                 carts.map((cart: ICart) => (<div key={cart.id}>
-                        {cart.total}
+                         {cart.total}
                 </div>))
             }
-
         </div>
+
     );
 };

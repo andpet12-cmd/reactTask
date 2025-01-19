@@ -1,8 +1,10 @@
-import {IUser} from "../../models/IUser.ts";
-import {IUserResponseModel} from "../../models/IUserResponseModel.ts";
 import {useEffect, useState} from "react";
+import {IUserResponseModel} from "../../models/IUserResponseModel.ts";
+import {IUser} from "../../models/IUser.ts";
 import {UserComponent} from "../user-component/UserComponent.tsx";
 import {userService} from "../../services/api.service.ts";
+
+
 
 
 export const UsersComponent = () => {
@@ -11,13 +13,12 @@ export const UsersComponent = () => {
     const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(() => {
-        userService.getAllUsers()
-            .then(({users}: IUserResponseModel) => {
+        fetch("https://dummyjson.com/users")
+            userService.getAllUsers()
+            .then(({users}:IUserResponseModel) => {
                 setUsers(users);
-
             });
     }, []);
-
 
     return (
         <div>
