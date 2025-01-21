@@ -1,6 +1,6 @@
 import {ICart} from "./ICart.ts";
 
-export interface ICartResponseModel {
+export interface ICartResponse {
     total: number;
     skip: number;
     limit: number;

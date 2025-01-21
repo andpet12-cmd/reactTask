@@ -1,6 +1,6 @@
 import {IUser} from "./IUser.ts";
 
-export interface IUserResponseModel {
+export interface IUserResponse {
     total: number;
     skip: number;
     limit: number;

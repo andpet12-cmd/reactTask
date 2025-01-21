@@ -1,11 +1,12 @@
+import {UsersPage} from "../pages/UsersPage.tsx";
 import {Outlet} from "react-router";
-import {MenuComponent} from "../components/menu/MenuComponent.tsx";
 
 
-export const MainLayout = () => {
+function MainLayout() {
     return <div>
-
-        <MenuComponent/>
+        <UsersPage/>
         <Outlet/>
     </div>
 }
+
+export default MainLayout;
