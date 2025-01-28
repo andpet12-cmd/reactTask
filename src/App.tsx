@@ -1,14 +1,25 @@
 import './App.css'
-import {Outlet} from "react-router";
-import {Menu} from "./components/menu/Menu.tsx";
+import {A} from "./components/A.tsx";
+import {B} from "./components/B.tsx";
+import {MyContext} from "./context/MyContextProvider.tsx";
+import {useState} from "react";
 
 function App() {
 
+    const [themeColor, setThemeColor] = useState('light');
+
     return (
-        <>
-            <Menu/>
-            <Outlet/>
-        </>
+        <div>
+            <MyContext.Provider value={{
+                theme: themeColor,
+                changeTheme: (themeValue: string) => {
+                    setThemeColor(themeValue);
+                }
+            }}>
+                <A/>
+                <B/>
+            </MyContext.Provider>
+        </div>
     );
 }
 
